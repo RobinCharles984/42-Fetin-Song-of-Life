@@ -9,10 +9,10 @@ public class PlayerMovement : MonoBehaviour
     //Variaveis
     [Header("Movement")]
     [SerializeField] private float jumpForce;
-    [SerializeField] private float moveSpeed;
+    [SerializeField] private float _moveSpeed;
     private float velocityX;
     private float velocityZ;
-    
+
     [Header("Gravity")] 
     [SerializeField] private float gForce;
     private float gFlag;
@@ -21,6 +21,13 @@ public class PlayerMovement : MonoBehaviour
     private CharacterController controller;
     private PlayerInput playerInput;
 
+    //Capsules
+    public float moveSpeed
+    {
+        get { return _moveSpeed; }
+        set { _moveSpeed = value; }
+    }
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -35,7 +42,7 @@ public class PlayerMovement : MonoBehaviour
     {
         Gravity();
 
-        controller.Move(new Vector3(velocityX * moveSpeed * Time.deltaTime, 0, velocityZ * moveSpeed *Time.deltaTime));
+        controller.Move(new Vector3(velocityX * _moveSpeed * Time.deltaTime, 0, velocityZ * _moveSpeed *Time.deltaTime));
     }
 
     public void Gravity()
