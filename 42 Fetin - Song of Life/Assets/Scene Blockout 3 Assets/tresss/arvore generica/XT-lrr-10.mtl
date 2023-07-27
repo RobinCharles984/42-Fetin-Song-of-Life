@@ -1,0 +1,17 @@
+#
+## Alias OBJ Material File
+# Exported from SketchUp, (c) 2000-2012 Trimble Navigation Limited
+
+newmtl _auto_
+Ka 0.000000 0.000000 0.000000
+Kd 0.262745 0.400000 0.152941
+Ks 0.330000 0.330000 0.330000
+d 0.990000
+map_Kd XT-lrr-10/_auto_.png
+
+newmtl _auto_2
+Ka 0.000000 0.000000 0.000000
+Kd 0.615686 0.439216 0.360784
+Ks 0.330000 0.330000 0.330000
+map_Kd XT-lrr-10/_auto_2.jpg
+

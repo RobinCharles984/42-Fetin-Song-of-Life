@@ -1,0 +1,65 @@
+# Blender 3.6.0 MTL File: 'treepack1.blend'
+# www.blender.org
+
+newmtl Material.003
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+Pr 0.500000
+Pm 0.000000
+Ps 0.000000
+Pc 0.000000
+Pcr 0.030000
+aniso 0.000000
+anisor 0.000000
+map_Kd tilebark.jpg
+map_Ks tilebarkspec.jpg
+
+newmtl Material.004
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+illum 2
+Pr 0.500000
+Pm 0.000000
+Ps 0.000000
+Pc 0.000000
+Pcr 0.030000
+aniso 0.000000
+anisor 0.000000
+map_Kd branch-texture-png.png
+map_Ks branch-texturespec-png.png
+map_d branch-texture-png.png
+map_Bump -bm 1.000000 branch-texturenormal-png.png
+
+newmtl Material.005
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+illum 2
+Pr 0.500000
+Pm 0.000000
+Ps 0.000000
+Pc 0.000000
+Pcr 0.030000
+aniso 0.000000
+anisor 0.000000
+map_Kd branch-texture-png.png
+map_Ks branch-texturespec-png.png
+map_d branch-texture-png.png
+map_Bump -bm 1.000000 branch-texturenormal-png.png
+
+newmtl Material.006
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+illum 2
+Pr 0.500000
+Pm 0.000000
+Ps 0.000000
+Pc 0.000000
+Pcr 0.030000
+aniso 0.000000
+anisor 0.000000
+map_Kd branch-texture-png.png
+map_Ks branch-texturespec-png.png
+map_d branch-texture-png.png
+map_Bump -bm 1.000000 branch-texturenormal-png.png

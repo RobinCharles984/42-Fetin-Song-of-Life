@@ -1,0 +1,29 @@
+#
+## Alias OBJ Material File
+# Exported from SketchUp, (c) 2000-2012 Trimble Navigation Limited
+
+newmtl _auto_
+Ka 0.000000 0.000000 0.000000
+Kd 0.631373 0.733333 0.505882
+Ks 0.330000 0.330000 0.330000
+d 0.990000
+map_Kd Bananeira by LandFX/_auto_.png
+
+newmtl _auto_2
+Ka 0.000000 0.000000 0.000000
+Kd 0.396078 0.647059 0.121569
+Ks 0.330000 0.330000 0.330000
+d 0.990000
+map_Kd Bananeira by LandFX/_auto_2.jpg
+
+newmtl _auto_5
+Ka 0.000000 0.000000 0.000000
+Kd 0.498039 0.572549 0.294118
+Ks 0.330000 0.330000 0.330000
+map_Kd Bananeira by LandFX/_auto_5.jpg
+
+newmtl BackColor
+Ka 0.000000 0.000000 0.000000
+Kd 0.643137 0.698039 0.733333
+Ks 0.330000 0.330000 0.330000
+
