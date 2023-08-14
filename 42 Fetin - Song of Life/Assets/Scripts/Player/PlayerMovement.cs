@@ -11,16 +11,27 @@ public class PlayerMovement : MonoBehaviour
     public Transform orientation;
     public Transform player;
     public Transform playerBody;
+    public Transform dustPosition;
+    public GameObject dust;
+    public ThirdPersonCam thirdPersonCamScript;
     private Rigidbody rb; //Body rb
     private Vector3 _moveDirection;
 
     [Header("Movement")] 
-    public float maxSpeed;
+    public float walkSpeed;
+    public float runSpeed;
     public float groundDrag;
     public bool isRunning;
+    float speed;
     float horizontal;
     float vertical;
     float run;
+    bool _attackSpear;
+    bool attackBow;
+    bool attackFlute;
+
+    [Header("Timers")] 
+    public float spearCoolDown;
 
     [Header("Ground Check")] 
     public float playerHeight;
@@ -33,7 +44,20 @@ public class PlayerMovement : MonoBehaviour
         get { return _moveDirection; }
         set { _moveDirection = value; }
     }
-    
+
+    public bool attackSpear
+    {
+        get { return _attackSpear; }
+        set { _attackSpear = value; }
+    }
+
+    //Firts thing called
+    private void Awake()
+    {
+        //Flag variables
+        speed = walkSpeed;
+    }
+
     // Start is called before the first frame update
     void Start()
     {
@@ -44,9 +68,10 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //Calling functions
         InEditor();
         MyInput();
-        
+
         grounded = Physics.Raycast(transform.position, Vector3.down, playerHeight * 0.5f + 0.2f, whatIsGround);
 
         if (grounded)
@@ -59,28 +84,40 @@ public class PlayerMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
+        //Movements
         OnMove();
         OnRun();
+
+        if (_attackSpear)
+            StartCoroutine(CoolDown());
     }
 
     void OnMove()
     {
         _moveDirection = orientation.forward * vertical + orientation.right * horizontal;
         
-        rb.AddForce(_moveDirection.normalized * maxSpeed * 10f, ForceMode.Force);
+        rb.AddForce(_moveDirection.normalized * walkSpeed * 10f, ForceMode.Force);
     }
 
+    //Running function
     void OnRun()
     {
-        if (run != 0 && _moveDirection.sqrMagnitude > 0)
+        if (!_attackSpear && !attackBow && !attackFlute)
         {
-            maxSpeed = 13;
-            isRunning = true;
-        }
-        else
-        {
-            maxSpeed = 7;
-            isRunning = false;
+            if (run != 0 && _moveDirection.sqrMagnitude > 0)
+            {
+                isRunning = true;
+            }
+            else
+            {
+                walkSpeed = speed;
+                isRunning = false;
+            }
+
+            if (isRunning)
+            {
+                walkSpeed = runSpeed;
+            }
         }
     }
 
@@ -93,11 +130,32 @@ public class PlayerMovement : MonoBehaviour
             Debug.DrawLine(transform.position, Vector3.down, Color.red);
     }
     
+    //Playing Dust FX
+    void CreateDust()
+    {
+        Instantiate(dust, transform);
+    }
+    
     //Inputs
     void MyInput()
     { 
         horizontal = Input.GetAxisRaw("Horizontal");
         vertical = Input.GetAxisRaw("Vertical");
         run = Input.GetAxis("Run");
+        _attackSpear = Input.GetButtonDown("Spear");
+        attackBow = Input.GetButtonDown("Bow");
+        attackFlute = Input.GetButtonDown("Flute");
+    }
+    
+    //Numerators
+    IEnumerator CoolDown()
+    {
+        thirdPersonCamScript.velocity = 0;
+        rb.constraints = RigidbodyConstraints.FreezeAll;
+        horizontal = vertical = 0;
+        yield return new WaitForSeconds(spearCoolDown);
+        rb.constraints = RigidbodyConstraints.None;
+        rb.constraints = RigidbodyConstraints.FreezeRotation;
+        thirdPersonCamScript.velocity = 7;
     }
 }

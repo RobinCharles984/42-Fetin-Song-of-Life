@@ -18,11 +18,23 @@ public class PlayerAnimation : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(player.moveDirection.sqrMagnitude > 0) //If is walking, play walk anim
+        BasicMoveAnim();
+        AttackingAnim();
+    }
+
+    void BasicMoveAnim()
+    {
+        if(player.moveDirection.sqrMagnitude > 0 && !player.attackSpear) //If is walking, play walk anim
             anim.SetInteger("transition", 1);
         else //Else, play idle anim
             anim.SetInteger("transition", 0);
         if(player.isRunning)
             anim.SetInteger("transition", 2);
+    }
+
+    void AttackingAnim()
+    {
+        if(player.attackSpear)
+            anim.SetTrigger("isAttacking");
     }
 }

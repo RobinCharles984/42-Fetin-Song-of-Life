@@ -4,16 +4,18 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    public int frameRate;
-    // Start is called before the first frame update
-    void Start()
+    public int targetFPS;
+     
+    void Awake()
     {
-        
+        QualitySettings.vSyncCount = 0;
+        Application.targetFrameRate = targetFPS;
     }
-
-    // Update is called once per frame
+     
     void Update()
     {
-        Application.targetFrameRate = frameRate;
+        if(Application.targetFrameRate != targetFPS)
+            Application.targetFrameRate = targetFPS;
     }
 }
+

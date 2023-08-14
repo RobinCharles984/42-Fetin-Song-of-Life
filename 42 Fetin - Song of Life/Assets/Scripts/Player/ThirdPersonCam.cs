@@ -9,7 +9,8 @@ public class ThirdPersonCam : MonoBehaviour
     public Transform orientation;
     public Transform player;
     public Transform playerBody;
-    public Rigidbody rb; //Body rb
+    public Transform camHolder;
+    public float camLerp;
 
     [Header("Values")] public float velocity;
 
@@ -27,5 +28,6 @@ public class ThirdPersonCam : MonoBehaviour
 
         if (inputDir != Vector3.zero)
             playerBody.forward = Vector3.Slerp(playerBody.forward, inputDir.normalized, velocity * Time.deltaTime);
+        camHolder.position = playerBody.position;
     }
 }
