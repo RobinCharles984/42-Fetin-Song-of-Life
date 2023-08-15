@@ -120,7 +120,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 200}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 0
-  controlID: 2446
+  controlID: 4554
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -145,7 +145,7 @@ MonoBehaviour:
   m_MinSize: {x: 100, y: 200}
   m_MaxSize: {x: 8096, y: 16192}
   vertical: 1
-  controlID: 2452
+  controlID: 4486
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -224,7 +224,7 @@ MonoBehaviour:
   m_MinSize: {x: 100, y: 200}
   m_MaxSize: {x: 8096, y: 16192}
   vertical: 1
-  controlID: 2357
+  controlID: 4560
 --- !u!114 &10
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -676,9 +676,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 16.152084, y: 1.5954432, z: -70.258835}
+    m_Target: {x: 13.7708025, y: 1.2738287, z: -71.14585}
     speed: 2
-    m_Value: {x: 16.152084, y: 1.5954432, z: -70.258835}
+    m_Value: {x: 13.7708025, y: 1.2738287, z: -71.14585}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -725,22 +725,22 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
-    m_Target: {x: -0.045820907, y: 0.8815805, z: -0.08757687, w: -0.4616112}
+    m_Target: {x: 0.12545148, y: -0.8746454, z: 0.32922062, w: 0.33332607}
     speed: 2
-    m_Value: {x: -0.045688618, y: 0.8822551, z: -0.08764384, w: -0.46027952}
+    m_Value: {x: -0.12543674, y: 0.8745426, z: -0.32918194, w: -0.3332869}
   m_Size:
-    m_Target: 0.8660254
+    m_Target: 0.7237914
     speed: 2
-    m_Value: 0.8660254
+    m_Value: 0.7237914
   m_Ortho:
     m_Target: 0
     speed: 2
     m_Value: 0
   m_CameraSettings:
     m_Speed: 1
-    m_SpeedNormalized: 0.5
+    m_SpeedNormalized: 1
     m_SpeedMin: 0.01
-    m_SpeedMax: 2
+    m_SpeedMax: 1
     m_EasingEnabled: 1
     m_EasingDuration: 0.4
     m_AccelerationEnabled: 1
@@ -850,7 +850,7 @@ MonoBehaviour:
     m_SaveData: []
   m_LockTracker:
     m_IsLocked: 0
-  m_LastSelectedObjectID: 32992
+  m_LastSelectedObjectID: 29168
 --- !u!114 &17
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -882,9 +882,9 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: ce9f0000
-      m_LastClickedID: 40910
-      m_ExpandedIDs: 1e8effff6c8effffd890ffffae96fffffc96ffff229bffff60dbffffaedbffffd4dfffff46e9ffff96e9ffff02ecffff82eeffffd4eefffffaf2ffff10fbffffce9f0000
+      m_SelectedIDs: f0710000
+      m_LastClickedID: 29168
+      m_ExpandedIDs: e4a4ffff32a5ffff70a9ffff2cf9ffff64f9ffff68f9ffff6cf9ffff76f9ffff7af9ffff92f9ffffa6f9ffffb0f9ffff0efbffff
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -949,23 +949,23 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Scene Blockout 3 Assets/tresss/arvore generica
+    - Assets
     m_Globs: []
     m_OriginalText: 
   m_ViewMode: 1
   m_StartGridSize: 53
   m_LastFolders:
-  - Assets/Scene Blockout 3 Assets/tresss/arvore generica
+  - Assets
   m_LastFoldersGridSize: 53
   m_LastProjectPath: C:\Users\tales\OneDrive\Documentos\42-Fetin-Song-of-Life\42
     Fetin - Song of Life
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 51}
-    m_SelectedIDs: ca880000
-    m_LastClickedID: 35018
-    m_ExpandedIDs: 00000000ee610000f0610000f2610000f4610000f6610000f8610000fa610000fc610000fe610000006200009c620000cc88000000ca9a3b
+    scrollPos: {x: 0, y: 0}
+    m_SelectedIDs: 46620000
+    m_LastClickedID: 25158
+    m_ExpandedIDs: 000000003462000036620000386200003a6200003c6200003e6200004062000042620000446200004662000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -993,7 +993,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000ee610000f0610000f2610000f4610000f6610000f8610000fa610000fc610000fe6100000062000000ca9a3b
+    m_ExpandedIDs: 000000003462000036620000386200003a6200003c6200003e6200004062000042620000446200004662000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 

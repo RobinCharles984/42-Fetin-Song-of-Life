@@ -842,6 +842,8 @@ GameObject:
   - component: {fileID: 8919059661996272832}
   - component: {fileID: 8956644796092626148}
   - component: {fileID: 8956644796092626146}
+  - component: {fileID: 8515002773257731559}
+  - component: {fileID: 1819562287717394704}
   - component: {fileID: 8956644796092626149}
   - component: {fileID: 8956644796092626150}
   m_Layer: 3
@@ -905,6 +907,38 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
+--- !u!114 &8515002773257731559
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8110152992927118970}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f3a449718c767174898e3e6eacbe291f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1819562287717394704
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8110152992927118970}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f3d1da33160a4f7489abfc97810a75ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spearFigure: {fileID: 0}
+  spearHand: {fileID: 0}
+  bowFigure: {fileID: 0}
+  bowHand: {fileID: 0}
+  fluteFigure: {fileID: 0}
+  fluteHand: {fileID: 0}
+  thirdPersonCamScript: {fileID: 0}
+  spearCoolDown: 0
 --- !u!114 &8956644796092626149
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -920,7 +954,11 @@ MonoBehaviour:
   orientation: {fileID: 8956644796525705014}
   player: {fileID: 8919059661996272832}
   playerBody: {fileID: 5015113590805315857}
-  maxSpeed: 7
+  dustPosition: {fileID: 0}
+  dust: {fileID: 0}
+  thirdPersonCamScript: {fileID: 0}
+  walkSpeed: 0
+  runSpeed: 0
   groundDrag: 10
   isRunning: 0
   playerHeight: 2
