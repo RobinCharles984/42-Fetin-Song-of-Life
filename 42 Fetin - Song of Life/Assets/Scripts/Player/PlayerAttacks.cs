@@ -102,6 +102,7 @@ public class PlayerAttacks : MonoBehaviour
         yield return new WaitForSeconds(spearCoolDown);
         thirdPersonCamScript.velocity = 7;
         rb.constraints = RigidbodyConstraints.None;
+        rb.constraints = RigidbodyConstraints.FreezeRotation;
         spearFigure.SetActive(true);
         spearHand.SetActive(false);
     }
