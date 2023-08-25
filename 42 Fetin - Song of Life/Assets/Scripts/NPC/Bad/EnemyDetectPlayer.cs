@@ -5,7 +5,9 @@ using UnityEngine;
 
 public class EnemyDetectPlayer : MonoBehaviour
 {
-    [SerializeField] private EnemyMovement enemy;
+    [SerializeField] 
+    private EnemyMovement enemy;
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -22,7 +24,8 @@ public class EnemyDetectPlayer : MonoBehaviour
     {
         if (other.tag == "Player")
         {
-            enemy.ChasePlayer();
+            enemy.canChase = true;
         }
+
     }
 }

@@ -8,30 +8,48 @@ public class EnemyMovement : MonoBehaviour
 {
     //Variables
     [Header("Movement")] 
+    public float speed;
+    public float minDistance;
+    public float maxDistance;
+    
     [SerializeField] private float damage;
 
-    [Header("Enemy Behaviour")] 
-    [SerializeField] private Collider[] enemyArea;
-    [SerializeField] private float enemyAreaRadius;
-    [SerializeField] private Transform enemyAreaPosition;
-    [SerializeField] private int enemyAreaLayer;
-    
+    [Header("Attacks")] 
+    private bool _canAttack;
 
+    [Header("AI")] 
+    private bool _canChase;
+    
     [Header("Components")] 
     [SerializeField]private Transform playerTransform;
-    private NavMeshAgent navMesh;
+    
+    //Capsules
+    public bool canAttack
+    {
+        get { return _canAttack; }
+        set { _canAttack = value; }
+    }
+
+    public bool canChase
+    {
+        get { return _canChase; }
+        set { _canChase = value; }
+    }
     
     // Start is called before the first frame update
     void Start()
     {
         //Getting Components
-        navMesh = this.GetComponent<NavMeshAgent>();
+        
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        if (_canChase)
+        {
+            ChasePlayer();
+        }
     }
 
     private void FixedUpdate()
@@ -39,10 +57,27 @@ public class EnemyMovement : MonoBehaviour
         
     }
 
+    public void FoundPlayer()
+    {
+        StartCoroutine(FoundPlayerTimer());
+    }
+
     //Chasing Player
     public void ChasePlayer()
     {
-        navMesh.SetDestination(playerTransform.position);
+        //If it's at the chase range -> run at player direction
+        if (Vector3.Distance(transform.position, playerTransform.position) >= minDistance)
+        {
+            //Always look at player
+            transform.LookAt(playerTransform);
+            transform.position += transform.forward * speed * Time.deltaTime;
+            _canAttack = false;
+        }
+        else
+        {
+            transform.position = transform.position;
+            _canAttack = true;
+        }
     }
     
     //Searching
@@ -52,5 +87,13 @@ public class EnemyMovement : MonoBehaviour
     }
     
     //Spawning
-    
+
+    //Timers and Numerators
+    public IEnumerator FoundPlayerTimer()
+    {
+        float speedFlag = speed;
+        speed = 0;
+        yield return new WaitForSeconds(2f);
+        speed = speedFlag;
+    }
 }

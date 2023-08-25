@@ -32,6 +32,7 @@ public class PlayerAttacks : MonoBehaviour
     [Header("Scripts")] 
     public ThirdPersonCam thirdPersonCamScript;
     private PlayerInputs playerInput;
+    private PlayerMovement playerMovement;
 
     [Header("Components")] 
     private Rigidbody rb;
@@ -42,6 +43,7 @@ public class PlayerAttacks : MonoBehaviour
     public float fluteCoolDown;
     //Flags
     float spearCoolDownFlag;
+    public bool isAttacking;
 
     // Start is called before the first frame update
     void Start()
@@ -49,6 +51,8 @@ public class PlayerAttacks : MonoBehaviour
         //Getting Components
         rb = GetComponent<Rigidbody>();
         playerInput = GetComponent<PlayerInputs>();
+        playerMovement = GetComponent<PlayerMovement>();
+        thirdPersonCamScript = GetComponent<ThirdPersonCam>();
         
         //Deactivating when Start
         spearHand.SetActive(false);
@@ -57,6 +61,7 @@ public class PlayerAttacks : MonoBehaviour
         
         //Flags
         spearCoolDownFlag = spearCoolDown;
+        isAttacking = false;
     }
 
     // Update is called once per frame
@@ -94,6 +99,7 @@ public class PlayerAttacks : MonoBehaviour
 
     IEnumerator SpearCoolDown()
     {
+        playerMovement.walkSpeed = 0;
         spearFigure.SetActive(false);
         spearHand.SetActive(true);
         rb.constraints = RigidbodyConstraints.FreezeAll;
@@ -102,8 +108,8 @@ public class PlayerAttacks : MonoBehaviour
         yield return new WaitForSeconds(spearCoolDown);
         thirdPersonCamScript.velocity = 7;
         rb.constraints = RigidbodyConstraints.None;
-        rb.constraints = RigidbodyConstraints.FreezeRotation;
         spearFigure.SetActive(true);
+        rb.constraints = RigidbodyConstraints.FreezeRotation;
         spearHand.SetActive(false);
     }
 }

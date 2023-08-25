@@ -8,6 +8,7 @@ public class PlayerAnimation : MonoBehaviour
     private Animator anim;
     private PlayerInputs playerInput;
     private PlayerMovement playerMovement;
+    private PlayerAttacks playerAttacks;
     
     // Start is called before the first frame update
     void Start()
