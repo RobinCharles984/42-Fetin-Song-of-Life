@@ -9,6 +9,6 @@ EditorBuildSettings:
     path: Assets/Scenes/Main Menu.unity
     guid: b2a7ce06616d0c44087f6c461faffcdb
   - enabled: 1
-    path: Assets/Scenes/Scene Blockout 3.unity
+    path: Assets/Scenes/Danger Zone.unity
     guid: fd4e55d869c84fa408c12a715de8ecf9
   m_configObjects: {}

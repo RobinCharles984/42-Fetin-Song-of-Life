@@ -22,7 +22,7 @@ public class EnemyMovement : MonoBehaviour
     
     [Header("Components")] 
     [SerializeField]private Transform playerTransform;
-    
+
     //Capsules
     public bool canAttack
     {
@@ -68,9 +68,12 @@ public class EnemyMovement : MonoBehaviour
         //If it's at the chase range -> run at player direction
         if (Vector3.Distance(transform.position, playerTransform.position) >= minDistance)
         {
+            //Loking Y-Axis
+            var v3 = transform.forward;
+            v3.y = 0.0f;
             //Always look at player
             transform.LookAt(playerTransform);
-            transform.position += transform.forward * speed * Time.deltaTime;
+            transform.position += v3 * speed * Time.deltaTime;
             _canAttack = false;
         }
         else
